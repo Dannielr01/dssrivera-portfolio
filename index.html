@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio — Founder & Digital Solutions Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --black:   #080808;
+    --dark:    #0f0f0f;
+    --card:    #151515;
+    --border:  #242424;
+    --gold:    #c8a84b;
+    --gold2:   #e8c96a;
+    --white:   #f0ede8;
+    --sub:     #888;
+    --muted:   #444;
+    --red:     #c0392b;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 48px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(200,168,75,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(52px, 10vw, 96px);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero-name span { color: var(--gold); }
+
+  .hero-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: 400;
+    color: var(--sub);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  .hero-bio {
+    font-size: 15px;
+    color: var(--sub);
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 48px;
+  }
+
+  .credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+  }
+  .cred {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 7px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--sub);
+    transition: all 0.2s;
+  }
+  .cred:hover { border-color: var(--gold); color: var(--gold); }
+  .cred.highlight { border-color: var(--gold); color: var(--gold); }
+
+  .hero-cta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 4px;
+    padding: 14px 28px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold2); transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 28px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* diagonal divider */
+  .divider {
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+    margin: 0 48px;
+    opacity: 0.4;
+  }
+
+  /* ── SECTION ── */
+  section { padding: 80px 48px; }
+
+  .section-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin-bottom: 48px;
+    line-height: 1;
+  }
+  .section-title span { color: var(--gold); }
+
+  /* ── PROJECTS GRID ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+  }
+
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: block;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--card-accent, var(--gold));
+    transition: height 0.3s;
+  }
+  .project-card:hover { background: #1a1a1a; transform: translateY(-2px); }
+  .project-card:hover::before { height: 100%; }
+
+  .project-card.green  { --card-accent: #52b788; }
+  .project-card.blue   { --card-accent: #4a9eff; }
+  .project-card.purple { --card-accent: #9b72cf; }
+  .project-card.red    { --card-accent: #e05c4b; }
+  .project-card.teal   { --card-accent: #38b2ac; }
+
+  .card-icon { font-size: 32px; margin-bottom: 20px; }
+
+  .card-category {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .project-card.green  .card-category { color: #52b788; }
+  .project-card.blue   .card-category { color: #4a9eff; }
+  .project-card.purple .card-category { color: #9b72cf; }
+  .project-card.red    .card-category { color: #e05c4b; }
+  .project-card.teal   .card-category { color: #38b2ac; }
+
+  .card-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+
+  .card-desc {
+    font-size: 13px;
+    color: var(--sub);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    background: var(--border);
+    color: var(--sub);
+  }
+
+  .card-arrow {
+    position: absolute;
+    bottom: 24px; right: 24px;
+    font-size: 18px;
+    color: var(--muted);
+    transition: all 0.2s;
+  }
+  .project-card:hover .card-arrow { color: var(--gold); transform: translate(3px, -3px); }
+
+  /* ── STATS ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2px;
+    margin-top: 64px;
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--sub);
+  }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2px;
+  }
+  .philosophy-item {
+    padding: 36px 28px;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+  .philosophy-item:last-child { border-right: none; }
+  .philosophy-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -2px;
+  }
+  .philosophy-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .philosophy-text {
+    font-size: 13px;
+    color: var(--sub);
+    line-height: 1.6;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .contact-headline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: -1px;
+  }
+  .contact-headline span { color: var(--gold); }
+
+  .contact-sub {
+    font-size: 14px;
+    color: var(--sub);
+    line-height: 1.7;
+    margin-top: 20px;
+    margin-bottom: 32px;
+  }
+
+  .contact-items { display: flex; flex-direction: column; gap: 16px; }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .contact-item:hover { border-color: var(--gold); background: rgba(200,168,75,0.04); }
+  .contact-icon { font-size: 20px; width: 32px; text-align: center; }
+  .contact-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); }
+  .contact-value { font-size: 14px; font-weight: 600; color: var(--white); }
+
+  /* ── QR PLACEHOLDER ── */
+  .qr-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 32px;
+    text-align: center;
+  }
+  .qr-placeholder {
+    width: 160px;
+    height: 160px;
+    background: var(--white);
+    border-radius: 4px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* QR grid visual */
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 7px, rgba(0,0,0,0.08) 7px, rgba(0,0,0,0.08) 8px),
+      repeating-linear-gradient(90deg, transparent, transparent 7px, rgba(0,0,0,0.08) 7px, rgba(0,0,0,0.08) 8px);
+    position: relative;
+    overflow: hidden;
+  }
+  .qr-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px;
+    width: 36px; height: 36px;
+    border: 4px solid #111;
+    border-radius: 2px;
+  }
+  .qr-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 8px; right: 8px;
+    width: 36px; height: 36px;
+    border: 4px solid #111;
+    border-radius: 2px;
+  }
+  .qr-inner {
+    position: absolute;
+    bottom: 8px; left: 8px;
+    width: 36px; height: 36px;
+    border: 4px solid #111;
+    border-radius: 2px;
+  }
+  .qr-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 4px;
+  }
+  .qr-sub {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 28px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+  }
+  .footer-copy { font-size: 12px; color: var(--muted); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tag    { animation: fadeUp 0.5s ease both; animation-delay: 0.1s; }
+  .hero-name   { animation: fadeUp 0.5s ease both; animation-delay: 0.2s; }
+  .hero-title  { animation: fadeUp 0.5s ease both; animation-delay: 0.3s; }
+  .hero-bio    { animation: fadeUp 0.5s ease both; animation-delay: 0.4s; }
+  .credentials { animation: fadeUp 0.5s ease both; animation-delay: 0.5s; }
+  .hero-cta    { animation: fadeUp 0.5s ease both; animation-delay: 0.6s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero, section, footer { padding-left: 24px; padding-right: 24px; }
+    .divider { margin: 0 24px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .philosophy-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .philosophy-item:last-child { border-bottom: none; }
+  }
+
+  /* horizontal rule accent */
+  .accent-line {
+    width: 48px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 32px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ─────────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-tag">Founder & Digital Solutions Strategist</div>
+  <h1 class="hero-name">Building<br/><span>Systems</span><br/>That Scale.</h1>
+  <div class="hero-title">Marine Veteran · Lean Six Sigma · App Developer</div>
+  <p class="hero-bio">
+    12 years operating across military, tech, manufacturing, and distribution &
+    transportation taught me one thing — every inefficient process is a revenue leak. I build
+    AI-powered technology that plugs those leaks, automates intake, closes leads, and works
+    for your business 24 hours a day without calling in sick.
+  </p>
+  <div class="credentials">
+    <div class="cred highlight">USMC Veteran</div>
+    <div class="cred highlight">Green Belt — Lean Six Sigma</div>
+    <div class="cred highlight">AI-Powered App Developer</div>
+    <div class="cred">12 Yrs Logistics</div>
+    <div class="cred">Military</div>
+    <div class="cred">Tech</div>
+    <div class="cred">Manufacturing</div>
+    <div class="cred">Distribution & Transportation</div>
+  </div>
+  <div class="hero-cta">
+    <a href="#projects" class="btn-primary">View My Work</a>
+    <a href="#contact" class="btn-ghost">Get In Touch</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── STATS ─────────────────────────────────────────────────────────────────── -->
+<section style="padding-top: 60px; padding-bottom: 60px;">
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Apps in Development</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">AI Assistants Built In</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Industries Served</div></div>
+    <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">AI Works While You Sleep</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── PROJECTS ───────────────────────────────────────────────────────────────── -->
+<section id="projects">
+  <div class="section-tag">Portfolio</div>
+  <h2 class="section-title">Current <span>Projects</span></h2>
+
+  <div class="projects-grid">
+
+    <a href="#" class="project-card green">
+      <div class="card-icon">💚</div>
+      <div class="card-category">Senior Care · Placement</div>
+      <div class="card-name">CareConnect</div>
+      <p class="card-desc">Smart placement app for a senior living agency. Families match with contracted facilities through a 5-step wizard. Auto-routes lead PDFs to the advisor's phone. Full CRM with commission tracking.</p>
+      <div class="card-tags">
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">CRM</span>
+        <span class="tag">PDF Auto-Gen</span>
+        <span class="tag">Lead Routing</span>
+      </div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+    <a href="#" class="project-card blue">
+      <div class="card-icon">⚾</div>
+      <div class="card-category">Youth Sports · Training</div>
+      <div class="card-name">ProAthletics</div>
+      <p class="card-desc">Branded mobile app for a premier youth sports training facility. QR code check-in, class booking, subscription management, and a manager dashboard with revenue analytics.</p>
+      <div class="card-tags">
+        <span class="tag">React Native</span>
+        <span class="tag">Expo</span>
+        <span class="tag">Stripe</span>
+        <span class="tag">QR Check-In</span>
+        <span class="tag">Bookings</span>
+      </div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+    <a href="#" class="project-card purple">
+      <div class="card-icon">🏥</div>
+      <div class="card-category">SaaS · Senior Living</div>
+      <div class="card-name">SeniorHub</div>
+      <p class="card-desc">White-label SaaS platform for senior living facilities. Each client gets a branded family portal and admin dashboard. Multi-tenant — build once, sell to 50 facilities. $199–$499/mo recurring.</p>
+      <div class="card-tags">
+        <span class="tag">Next.js</span>
+        <span class="tag">Multi-Tenant</span>
+        <span class="tag">White-Label</span>
+        <span class="tag">SaaS</span>
+        <span class="tag">Stripe</span>
+      </div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+    <a href="#" class="project-card red">
+      <div class="card-icon">🌮</div>
+      <div class="card-category">Restaurant · Hospitality</div>
+      <div class="card-name">Casa Fuego</div>
+      <p class="card-desc">Full restaurant app for a local cantina. Digital menu, table reservations, waitlist SMS, and a 3-tier loyalty rewards system. Manager dashboard with real-time analytics.</p>
+      <div class="card-tags">
+        <span class="tag">Expo</span>
+        <span class="tag">Loyalty</span>
+        <span class="tag">Reservations</span>
+        <span class="tag">Twilio SMS</span>
+        <span class="tag">Analytics</span>
+      </div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+    <a href="#" class="project-card teal" style="grid-column: span 1;">
+      <div class="card-icon">⚡</div>
+      <div class="card-category">Fitness · Wellness</div>
+      <div class="card-name">ZenFlex</div>
+      <p class="card-desc">Original fitness and wellness app built on 3 core principles: Zen, Stoicism, and Elite Mentality. Designed for the man who trains mind and body with equal intensity.</p>
+      <div class="card-tags">
+        <span class="tag">Fitness App</span>
+        <span class="tag">Wellness</span>
+        <span class="tag">Stoicism</span>
+        <span class="tag">Elite Mentality</span>
+        <span class="tag">Original IP</span>
+      </div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+    <a href="#" class="project-card" style="--card-accent:#c084b8;">
+      <div class="card-icon">🌿</div>
+      <div class="card-category">Wellness · Beauty Tech</div>
+      <div class="card-name">SereneTouch</div>
+      <p class="card-desc">Full GlossGenius replacement for a solo massage therapist. Client booking, intake forms, SOAP notes, Stripe payments, tip prompts, gift cards, loyalty rewards, and automated marketing campaigns — all owned, no monthly platform fee.</p>
+      <div class="card-tags">
+        <span class="tag">Expo</span>
+        <span class="tag">Stripe</span>
+        <span class="tag">Twilio</span>
+        <span class="tag">SOAP Notes</span>
+        <span class="tag">Marketing Automation</span>
+      </div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+    <a href="#" class="project-card" style="--card-accent:#c8a84b; grid-column: span 1;">
+      <div class="card-icon">⚡</div>
+      <div class="card-category">Multi-Business · Command Center</div>
+      <div class="card-name">CommandCenter</div>
+      <p class="card-desc">One login. Every business. Real time. A unified owner dashboard connecting multiple venues — revenue, reservations, staff alerts, event leads, and an AI morning briefing that summarizes every business overnight so you wake up knowing exactly what happened and what needs attention today.</p>
+      <div class="card-tags">
+        <span class="tag">Next.js</span>
+        <span class="tag">Multi-Venue</span>
+        <span class="tag">AI Briefing</span>
+        <span class="tag">Real-Time</span>
+        <span class="tag">White-Label</span>
+      </div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── PHILOSOPHY ──────────────────────────────────────────────────────────── -->
+<section class="philosophy" style="padding: 0;">
+  <div class="philosophy-grid">
+    <div class="philosophy-item">
+      <div class="philosophy-num">01</div>
+      <div class="philosophy-title">Cut the Waste</div>
+      <p class="philosophy-text">Lean Six Sigma isn't just a certification — it's how I think. Every app I build eliminates a broken manual process and replaces it with an automated system.</p>
+    </div>
+    <div class="philosophy-item">
+      <div class="philosophy-num">02</div>
+      <div class="philosophy-title">Own Your Leads</div>
+      <p class="philosophy-text">Your leads should belong to you — not a middleman platform. I build tools that give businesses direct ownership of their customer relationships and data.</p>
+    </div>
+    <div class="philosophy-item">
+      <div class="philosophy-num">03</div>
+      <div class="philosophy-title">AI Never Sleeps</div>
+      <p class="philosophy-text">Every app I build includes a built-in AI assistant. It answers questions, qualifies leads, books appointments, and captures revenue at 3am on a Sunday — without a single human involved.</p>
+    </div>
+    <div class="philosophy-item">
+      <div class="philosophy-num">04</div>
+      <div class="philosophy-title">Build to Scale</div>
+      <p class="philosophy-text">From the Marine Corps to logistics to tech — the best systems are built once and scaled indefinitely. Every product I create is designed with that in mind.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── CONTACT ────────────────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-tag">Contact</div>
+  <div class="contact-grid">
+    <div>
+      <h2 class="contact-headline">Let's <span>Build</span><br/>Something.</h2>
+      <p class="contact-sub">Whether you're a gym owner, a senior care agency, a restaurant, or any business losing revenue through manual processes — I'll build you an AI-powered app that works for you around the clock. Let's talk.</p>
+      <div class="hero-cta">
+        <a href="tel:+19515550000" class="btn-primary">Call Now</a>
+        <a href="/cdn-cgi/l/email-protection#5821372d183d35393134763b3735" class="btn-ghost">Send Email</a>
+      </div>
+    </div>
+    <div>
+      <div class="qr-box">
+        <div class="qr-placeholder">
+          <div class="qr-inner"></div>
+          <span style="position:relative;z-index:1;font-size:9px;color:#333;font-weight:800;letter-spacing:1px;">YOUR QR</span>
+        </div>
+        <div class="qr-label">Scan to See Live Demos</div>
+        <div class="qr-sub">All projects · Interactive previews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-logo">DSS Rivera</div>
+  <div class="footer-copy">© 2026 · Founder & Digital Solutions Strategist · Built to Scale</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Subtle card entrance animation on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = `fadeUp 0.4s ease ${i * 0.07}s both`;
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshol
