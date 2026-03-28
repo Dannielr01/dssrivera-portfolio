@@ -415,49 +415,19 @@
     text-align: center;
   }
   .qr-placeholder {
-    width: 160px;
-    height: 160px;
-    background: var(--white);
+    width: 180px;
+    height: 180px;
+    background: #fff;
     border-radius: 4px;
     margin: 0 auto 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--black);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    /* QR grid visual */
-    background-image:
-      repeating-linear-gradient(0deg, transparent, transparent 7px, rgba(0,0,0,0.08) 7px, rgba(0,0,0,0.08) 8px),
-      repeating-linear-gradient(90deg, transparent, transparent 7px, rgba(0,0,0,0.08) 7px, rgba(0,0,0,0.08) 8px);
     position: relative;
-    overflow: hidden;
   }
-  .qr-placeholder::before {
-    content: '';
-    position: absolute;
-    top: 8px; left: 8px;
-    width: 36px; height: 36px;
-    border: 4px solid #111;
-    border-radius: 2px;
-  }
-  .qr-placeholder::after {
-    content: '';
-    position: absolute;
-    top: 8px; right: 8px;
-    width: 36px; height: 36px;
-    border: 4px solid #111;
-    border-radius: 2px;
-  }
-  .qr-inner {
-    position: absolute;
-    bottom: 8px; left: 8px;
-    width: 36px; height: 36px;
-    border: 4px solid #111;
-    border-radius: 2px;
-  }
+  .qr-placeholder::before { display: none; }
+  .qr-placeholder::after { display: none; }
+  .qr-inner { display: none; }
   .qr-label {
     font-size: 11px;
     font-weight: 700;
@@ -526,7 +496,7 @@
 <section class="hero">
   <div class="hero-tag">Founder & Digital Solutions Strategist</div>
   <h1 class="hero-name">Building<br/><span>Systems</span><br/>That Scale.</h1>
-  <div class="hero-title">Marine Veteran · Lean Six Sigma · App Developer</div>
+  <div class="hero-title">Marine Veteran · Lean Six Sigma · Where Process Meets AI</div>
   <p class="hero-bio">
     12 years operating across military, tech, manufacturing, and distribution &
     transportation taught me one thing — every inefficient process is a revenue leak. I build
@@ -536,7 +506,7 @@
   <div class="credentials">
     <div class="cred highlight">USMC Veteran</div>
     <div class="cred highlight">Green Belt — Lean Six Sigma</div>
-    <div class="cred highlight">AI-Powered App Developer</div>
+    <div class="cred highlight">Where Process Meets AI</div>
     <div class="cred">12 Yrs Logistics</div>
     <div class="cred">Military</div>
     <div class="cred">Tech</div>
@@ -574,7 +544,7 @@
       <div class="card-icon">💚</div>
       <div class="card-category">Senior Care · Placement</div>
       <div class="card-name">CareConnect</div>
-      <p class="card-desc">Smart placement app for a senior living agency. Families match with contracted facilities through a 5-step wizard. Auto-routes lead PDFs to the advisor's phone. Full CRM with commission tracking.</p>
+      <p class="card-desc">AI-powered platform connecting families with senior care facilities. Automated intake, smart matching, and a full CRM — built for the agency that wants to scale without adding headcount.</p>
       <div class="card-tags">
         <span class="tag">React</span>
         <span class="tag">Node.js</span>
@@ -589,7 +559,7 @@
       <div class="card-icon">⚾</div>
       <div class="card-category">Youth Sports · Training</div>
       <div class="card-name">ProAthletics</div>
-      <p class="card-desc">Branded mobile app for a premier youth sports training facility. QR code check-in, class booking, subscription management, and a manager dashboard with revenue analytics.</p>
+      <p class="card-desc">Branded mobile platform for a youth sports training facility. Members book, check in, and pay — all in one app. Coaches and managers get a real-time dashboard. No third-party platform needed.</p>
       <div class="card-tags">
         <span class="tag">React Native</span>
         <span class="tag">Expo</span>
@@ -604,7 +574,7 @@
       <div class="card-icon">🏥</div>
       <div class="card-category">SaaS · Senior Living</div>
       <div class="card-name">SeniorHub</div>
-      <p class="card-desc">White-label SaaS platform for senior living facilities. Each client gets a branded family portal and admin dashboard. Multi-tenant — build once, sell to 50 facilities. $199–$499/mo recurring.</p>
+      <p class="card-desc">A private communication and management platform built for senior living facilities and the families they serve. White-labeled per client. Subscription-based. Built to scale across multiple locations.</p>
       <div class="card-tags">
         <span class="tag">Next.js</span>
         <span class="tag">Multi-Tenant</span>
@@ -619,7 +589,7 @@
       <div class="card-icon">🌮</div>
       <div class="card-category">Restaurant · Hospitality</div>
       <div class="card-name">Casa Fuego</div>
-      <p class="card-desc">Full restaurant app for a local cantina. Digital menu, table reservations, waitlist SMS, and a 3-tier loyalty rewards system. Manager dashboard with real-time analytics.</p>
+      <p class="card-desc">Full-service restaurant OS for a local cantina. Reservations, live table management, waitlist with automated guest notifications, and a tiered loyalty program — all connected to a manager dashboard.</p>
       <div class="card-tags">
         <span class="tag">Expo</span>
         <span class="tag">Loyalty</span>
@@ -634,7 +604,7 @@
       <div class="card-icon">⚡</div>
       <div class="card-category">Fitness · Wellness</div>
       <div class="card-name">ZenFlex</div>
-      <p class="card-desc">Original fitness and wellness app built on 3 core principles: Zen, Stoicism, and Elite Mentality. Designed for the man who trains mind and body with equal intensity.</p>
+      <p class="card-desc">Original fitness and wellness app built around a philosophy of training the mind and body with equal intensity. A complete platform — workouts, mindset, and progression — built from the ground up as owned IP.</p>
       <div class="card-tags">
         <span class="tag">Fitness App</span>
         <span class="tag">Wellness</span>
@@ -649,7 +619,7 @@
       <div class="card-icon">🌿</div>
       <div class="card-category">Wellness · Beauty Tech</div>
       <div class="card-name">SereneTouch</div>
-      <p class="card-desc">Full GlossGenius replacement for a solo massage therapist. Client booking, intake forms, SOAP notes, Stripe payments, tip prompts, gift cards, loyalty rewards, and automated marketing campaigns — all owned, no monthly platform fee.</p>
+      <p class="card-desc">End-to-end business management platform for a solo wellness practitioner. Client booking, records, payments, and automated marketing — fully owned, no third-party platform fees or data sharing.</p>
       <div class="card-tags">
         <span class="tag">Expo</span>
         <span class="tag">Stripe</span>
@@ -664,7 +634,7 @@
       <div class="card-icon">⚡</div>
       <div class="card-category">Multi-Business · Command Center</div>
       <div class="card-name">CommandCenter</div>
-      <p class="card-desc">One login. Every business. Real time. A unified owner dashboard connecting multiple venues — revenue, reservations, staff alerts, event leads, and an AI morning briefing that summarizes every business overnight so you wake up knowing exactly what happened and what needs attention today.</p>
+      <p class="card-desc">Multi-venue owner intelligence platform. Every business, one dashboard. Real-time revenue, staff activity, and AI-generated briefings — so the owner always knows what's happening without being there.</p>
       <div class="card-tags">
         <span class="tag">Next.js</span>
         <span class="tag">Multi-Venue</span>
@@ -721,13 +691,12 @@
       </div>
     </div>
     <div>
-      <div class="qr-box">
-        <div class="qr-placeholder">
-          <div class="qr-inner"></div>
-          <span style="position:relative;z-index:1;font-size:9px;color:#333;font-weight:800;letter-spacing:1px;">YOUR QR</span>
+        <div class="qr-box">
+        <div class="qr-placeholder" style="background:#f0ede8;border-radius:8px;padding:10px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:150px;height:150px;display:flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 222 222" width="100%" height="100%" style="background:#fff"><g fill="#000"><rect x="36" y="36" width="6" height="6"/><rect x="42" y="36" width="6" height="6"/><rect x="48" y="36" width="6" height="6"/><rect x="54" y="36" width="6" height="6"/><rect x="60" y="36" width="6" height="6"/><rect x="66" y="36" width="6" height="6"/><rect x="72" y="36" width="6" height="6"/><rect x="84" y="36" width="6" height="6"/><rect x="90" y="36" width="6" height="6"/><rect x="96" y="36" width="6" height="6"/><rect x="102" y="36" width="6" height="6"/><rect x="108" y="36" width="6" height="6"/><rect x="120" y="36" width="6" height="6"/><rect x="144" y="36" width="6" height="6"/><rect x="150" y="36" width="6" height="6"/><rect x="156" y="36" width="6" height="6"/><rect x="162" y="36" width="6" height="6"/><rect x="168" y="36" width="6" height="6"/><rect x="174" y="36" width="6" height="6"/><rect x="180" y="36" width="6" height="6"/><rect x="36" y="42" width="6" height="6"/><rect x="72" y="42" width="6" height="6"/><rect x="84" y="42" width="6" height="6"/><rect x="90" y="42" width="6" height="6"/><rect x="96" y="42" width="6" height="6"/><rect x="108" y="42" width="6" height="6"/><rect x="114" y="42" width="6" height="6"/><rect x="120" y="42" width="6" height="6"/><rect x="144" y="42" width="6" height="6"/><rect x="180" y="42" width="6" height="6"/><rect x="36" y="48" width="6" height="6"/><rect x="48" y="48" width="6" height="6"/><rect x="54" y="48" width="6" height="6"/><rect x="60" y="48" width="6" height="6"/><rect x="72" y="48" width="6" height="6"/><rect x="84" y="48" width="6" height="6"/><rect x="90" y="48" width="6" height="6"/><rect x="96" y="48" width="6" height="6"/><rect x="114" y="48" width="6" height="6"/><rect x="120" y="48" width="6" height="6"/><rect x="144" y="48" width="6" height="6"/><rect x="156" y="48" width="6" height="6"/><rect x="162" y="48" width="6" height="6"/><rect x="168" y="48" width="6" height="6"/><rect x="180" y="48" width="6" height="6"/><rect x="36" y="54" width="6" height="6"/><rect x="48" y="54" width="6" height="6"/><rect x="54" y="54" width="6" height="6"/><rect x="60" y="54" width="6" height="6"/><rect x="72" y="54" width="6" height="6"/><rect x="90" y="54" width="6" height="6"/><rect x="96" y="54" width="6" height="6"/><rect x="114" y="54" width="6" height="6"/><rect x="132" y="54" width="6" height="6"/><rect x="144" y="54" width="6" height="6"/><rect x="156" y="54" width="6" height="6"/><rect x="162" y="54" width="6" height="6"/><rect x="168" y="54" width="6" height="6"/><rect x="180" y="54" width="6" height="6"/><rect x="36" y="60" width="6" height="6"/><rect x="48" y="60" width="6" height="6"/><rect x="54" y="60" width="6" height="6"/><rect x="60" y="60" width="6" height="6"/><rect x="72" y="60" width="6" height="6"/><rect x="84" y="60" width="6" height="6"/><rect x="102" y="60" width="6" height="6"/><rect x="132" y="60" width="6" height="6"/><rect x="144" y="60" width="6" height="6"/><rect x="156" y="60" width="6" height="6"/><rect x="162" y="60" width="6" height="6"/><rect x="168" y="60" width="6" height="6"/><rect x="180" y="60" width="6" height="6"/><rect x="36" y="66" width="6" height="6"/><rect x="72" y="66" width="6" height="6"/><rect x="90" y="66" width="6" height="6"/><rect x="96" y="66" width="6" height="6"/><rect x="102" y="66" width="6" height="6"/><rect x="108" y="66" width="6" height="6"/><rect x="120" y="66" width="6" height="6"/><rect x="132" y="66" width="6" height="6"/><rect x="144" y="66" width="6" height="6"/><rect x="180" y="66" width="6" height="6"/><rect x="36" y="72" width="6" height="6"/><rect x="42" y="72" width="6" height="6"/><rect x="48" y="72" width="6" height="6"/><rect x="54" y="72" width="6" height="6"/><rect x="60" y="72" width="6" height="6"/><rect x="66" y="72" width="6" height="6"/><rect x="72" y="72" width="6" height="6"/><rect x="84" y="72" width="6" height="6"/><rect x="96" y="72" width="6" height="6"/><rect x="108" y="72" width="6" height="6"/><rect x="120" y="72" width="6" height="6"/><rect x="132" y="72" width="6" height="6"/><rect x="144" y="72" width="6" height="6"/><rect x="150" y="72" width="6" height="6"/><rect x="156" y="72" width="6" height="6"/><rect x="162" y="72" width="6" height="6"/><rect x="168" y="72" width="6" height="6"/><rect x="174" y="72" width="6" height="6"/><rect x="180" y="72" width="6" height="6"/><rect x="90" y="78" width="6" height="6"/><rect x="114" y="78" width="6" height="6"/><rect x="120" y="78" width="6" height="6"/><rect x="126" y="78" width="6" height="6"/><rect x="132" y="78" width="6" height="6"/><rect x="36" y="84" width="6" height="6"/><rect x="54" y="84" width="6" height="6"/><rect x="60" y="84" width="6" height="6"/><rect x="66" y="84" width="6" height="6"/><rect x="72" y="84" width="6" height="6"/><rect x="78" y="84" width="6" height="6"/><rect x="84" y="84" width="6" height="6"/><rect x="108" y="84" width="6" height="6"/><rect x="114" y="84" width="6" height="6"/><rect x="132" y="84" width="6" height="6"/><rect x="138" y="84" width="6" height="6"/><rect x="156" y="84" width="6" height="6"/><rect x="168" y="84" width="6" height="6"/><rect x="174" y="84" width="6" height="6"/><rect x="180" y="84" width="6" height="6"/><rect x="36" y="90" width="6" height="6"/><rect x="54" y="90" width="6" height="6"/><rect x="96" y="90" width="6" height="6"/><rect x="102" y="90" width="6" height="6"/><rect x="108" y="90" width="6" height="6"/><rect x="114" y="90" width="6" height="6"/><rect x="120" y="90" width="6" height="6"/><rect x="126" y="90" width="6" height="6"/><rect x="132" y="90" width="6" height="6"/><rect x="150" y="90" width="6" height="6"/><rect x="156" y="90" width="6" height="6"/><rect x="162" y="90" width="6" height="6"/><rect x="168" y="90" width="6" height="6"/><rect x="174" y="90" width="6" height="6"/><rect x="36" y="96" width="6" height="6"/><rect x="48" y="96" width="6" height="6"/><rect x="54" y="96" width="6" height="6"/><rect x="60" y="96" width="6" height="6"/><rect x="72" y="96" width="6" height="6"/><rect x="90" y="96" width="6" height="6"/><rect x="96" y="96" width="6" height="6"/><rect x="114" y="96" width="6" height="6"/><rect x="126" y="96" width="6" height="6"/><rect x="144" y="96" width="6" height="6"/><rect x="162" y="96" width="6" height="6"/><rect x="180" y="96" width="6" height="6"/><rect x="42" y="102" width="6" height="6"/><rect x="60" y="102" width="6" height="6"/><rect x="78" y="102" width="6" height="6"/><rect x="84" y="102" width="6" height="6"/><rect x="90" y="102" width="6" height="6"/><rect x="108" y="102" width="6" height="6"/><rect x="114" y="102" width="6" height="6"/><rect x="132" y="102" width="6" height="6"/><rect x="144" y="102" width="6" height="6"/><rect x="156" y="102" width="6" height="6"/><rect x="162" y="102" width="6" height="6"/><rect x="168" y="102" width="6" height="6"/><rect x="174" y="102" width="6" height="6"/><rect x="180" y="102" width="6" height="6"/><rect x="42" y="108" width="6" height="6"/><rect x="48" y="108" width="6" height="6"/><rect x="60" y="108" width="6" height="6"/><rect x="72" y="108" width="6" height="6"/><rect x="78" y="108" width="6" height="6"/><rect x="90" y="108" width="6" height="6"/><rect x="96" y="108" width="6" height="6"/><rect x="102" y="108" width="6" height="6"/><rect x="108" y="108" width="6" height="6"/><rect x="114" y="108" width="6" height="6"/><rect x="144" y="108" width="6" height="6"/><rect x="180" y="108" width="6" height="6"/><rect x="36" y="114" width="6" height="6"/><rect x="42" y="114" width="6" height="6"/><rect x="48" y="114" width="6" height="6"/><rect x="66" y="114" width="6" height="6"/><rect x="78" y="114" width="6" height="6"/><rect x="84" y="114" width="6" height="6"/><rect x="96" y="114" width="6" height="6"/><rect x="114" y="114" width="6" height="6"/><rect x="120" y="114" width="6" height="6"/><rect x="126" y="114" width="6" height="6"/><rect x="132" y="114" width="6" height="6"/><rect x="156" y="114" width="6" height="6"/><rect x="174" y="114" width="6" height="6"/><rect x="36" y="120" width="6" height="6"/><rect x="42" y="120" width="6" height="6"/><rect x="48" y="120" width="6" height="6"/><rect x="60" y="120" width="6" height="6"/><rect x="66" y="120" width="6" height="6"/><rect x="72" y="120" width="6" height="6"/><rect x="78" y="120" width="6" height="6"/><rect x="84" y="120" width="6" height="6"/><rect x="90" y="120" width="6" height="6"/><rect x="102" y="120" width="6" height="6"/><rect x="108" y="120" width="6" height="6"/><rect x="114" y="120" width="6" height="6"/><rect x="126" y="120" width="6" height="6"/><rect x="138" y="120" width="6" height="6"/><rect x="156" y="120" width="6" height="6"/><rect x="162" y="120" width="6" height="6"/><rect x="168" y="120" width="6" height="6"/><rect x="174" y="120" width="6" height="6"/><rect x="180" y="120" width="6" height="6"/><rect x="36" y="126" width="6" height="6"/><rect x="48" y="126" width="6" height="6"/><rect x="54" y="126" width="6" height="6"/><rect x="66" y="126" width="6" height="6"/><rect x="78" y="126" width="6" height="6"/><rect x="102" y="126" width="6" height="6"/><rect x="150" y="126" width="6" height="6"/><rect x="162" y="126" width="6" height="6"/><rect x="168" y="126" width="6" height="6"/><rect x="180" y="126" width="6" height="6"/><rect x="36" y="132" width="6" height="6"/><rect x="54" y="132" width="6" height="6"/><rect x="60" y="132" width="6" height="6"/><rect x="66" y="132" width="6" height="6"/><rect x="72" y="132" width="6" height="6"/><rect x="84" y="132" width="6" height="6"/><rect x="90" y="132" width="6" height="6"/><rect x="96" y="132" width="6" height="6"/><rect x="120" y="132" width="6" height="6"/><rect x="126" y="132" width="6" height="6"/><rect x="132" y="132" width="6" height="6"/><rect x="138" y="132" width="6" height="6"/><rect x="144" y="132" width="6" height="6"/><rect x="150" y="132" width="6" height="6"/><rect x="156" y="132" width="6" height="6"/><rect x="168" y="132" width="6" height="6"/><rect x="174" y="132" width="6" height="6"/><rect x="84" y="138" width="6" height="6"/><rect x="90" y="138" width="6" height="6"/><rect x="102" y="138" width="6" height="6"/><rect x="108" y="138" width="6" height="6"/><rect x="114" y="138" width="6" height="6"/><rect x="120" y="138" width="6" height="6"/><rect x="132" y="138" width="6" height="6"/><rect x="156" y="138" width="6" height="6"/><rect x="168" y="138" width="6" height="6"/><rect x="174" y="138" width="6" height="6"/><rect x="36" y="144" width="6" height="6"/><rect x="42" y="144" width="6" height="6"/><rect x="48" y="144" width="6" height="6"/><rect x="54" y="144" width="6" height="6"/><rect x="60" y="144" width="6" height="6"/><rect x="66" y="144" width="6" height="6"/><rect x="72" y="144" width="6" height="6"/><rect x="84" y="144" width="6" height="6"/><rect x="96" y="144" width="6" height="6"/><rect x="102" y="144" width="6" height="6"/><rect x="132" y="144" width="6" height="6"/><rect x="144" y="144" width="6" height="6"/><rect x="156" y="144" width="6" height="6"/><rect x="180" y="144" width="6" height="6"/><rect x="36" y="150" width="6" height="6"/><rect x="72" y="150" width="6" height="6"/><rect x="84" y="150" width="6" height="6"/><rect x="90" y="150" width="6" height="6"/><rect x="96" y="150" width="6" height="6"/><rect x="108" y="150" width="6" height="6"/><rect x="120" y="150" width="6" height="6"/><rect x="126" y="150" width="6" height="6"/><rect x="132" y="150" width="6" height="6"/><rect x="156" y="150" width="6" height="6"/><rect x="174" y="150" width="6" height="6"/><rect x="36" y="156" width="6" height="6"/><rect x="48" y="156" width="6" height="6"/><rect x="54" y="156" width="6" height="6"/><rect x="60" y="156" width="6" height="6"/><rect x="72" y="156" width="6" height="6"/><rect x="84" y="156" width="6" height="6"/><rect x="96" y="156" width="6" height="6"/><rect x="108" y="156" width="6" height="6"/><rect x="114" y="156" width="6" height="6"/><rect x="120" y="156" width="6" height="6"/><rect x="126" y="156" width="6" height="6"/><rect x="132" y="156" width="6" height="6"/><rect x="138" y="156" width="6" height="6"/><rect x="144" y="156" width="6" height="6"/><rect x="150" y="156" width="6" height="6"/><rect x="156" y="156" width="6" height="6"/><rect x="180" y="156" width="6" height="6"/><rect x="36" y="162" width="6" height="6"/><rect x="48" y="162" width="6" height="6"/><rect x="54" y="162" width="6" height="6"/><rect x="60" y="162" width="6" height="6"/><rect x="72" y="162" width="6" height="6"/><rect x="84" y="162" width="6" height="6"/><rect x="96" y="162" width="6" height="6"/><rect x="120" y="162" width="6" height="6"/><rect x="132" y="162" width="6" height="6"/><rect x="138" y="162" width="6" height="6"/><rect x="144" y="162" width="6" height="6"/><rect x="174" y="162" width="6" height="6"/><rect x="180" y="162" width="6" height="6"/><rect x="36" y="168" width="6" height="6"/><rect x="48" y="168" width="6" height="6"/><rect x="54" y="168" width="6" height="6"/><rect x="60" y="168" width="6" height="6"/><rect x="72" y="168" width="6" height="6"/><rect x="96" y="168" width="6" height="6"/><rect x="108" y="168" width="6" height="6"/><rect x="120" y="168" width="6" height="6"/><rect x="132" y="168" width="6" height="6"/><rect x="138" y="168" width="6" height="6"/><rect x="156" y="168" width="6" height="6"/><rect x="162" y="168" width="6" height="6"/><rect x="168" y="168" width="6" height="6"/><rect x="174" y="168" width="6" height="6"/><rect x="180" y="168" width="6" height="6"/><rect x="36" y="174" width="6" height="6"/><rect x="72" y="174" width="6" height="6"/><rect x="90" y="174" width="6" height="6"/><rect x="96" y="174" width="6" height="6"/><rect x="120" y="174" width="6" height="6"/><rect x="144" y="174" width="6" height="6"/><rect x="150" y="174" width="6" height="6"/><rect x="156" y="174" width="6" height="6"/><rect x="168" y="174" width="6" height="6"/><rect x="174" y="174" width="6" height="6"/><rect x="180" y="174" width="6" height="6"/><rect x="36" y="180" width="6" height="6"/><rect x="42" y="180" width="6" height="6"/><rect x="48" y="180" width="6" height="6"/><rect x="54" y="180" width="6" height="6"/><rect x="60" y="180" width="6" height="6"/><rect x="66" y="180" width="6" height="6"/><rect x="72" y="180" width="6" height="6"/><rect x="84" y="180" width="6" height="6"/><rect x="90" y="180" width="6" height="6"/><rect x="114" y="180" width="6" height="6"/><rect x="120" y="180" width="6" height="6"/><rect x="132" y="180" width="6" height="6"/><rect x="138" y="180" width="6" height="6"/><rect x="162" y="180" width="6" height="6"/><rect x="180" y="180" width="6" height="6"/></g></svg></div>
         </div>
-        <div class="qr-label">Scan to See Live Demos</div>
-        <div class="qr-sub">All projects · Interactive previews</div>
+        <div class="qr-label">Scan to See Live Product</div>
+        <div class="qr-sub">ZenFlex · Live on the web</div>
       </div>
     </div>
   </div>
