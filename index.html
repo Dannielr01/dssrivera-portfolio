@@ -567,6 +567,15 @@
     .aposter { max-width: 420px; margin: 0 auto; }
     .mi { font-size: 19px; }
   }
+
+  /* ══ OTHER ACTIVE PROJECTS (compact tier) ══ */
+  .mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; margin-top: 4px; }
+  .mini-card { background: var(--card); border: 1px solid var(--border); padding: 24px 24px 26px; transition: background .2s, border-color .2s; }
+  .mini-card:hover { background: #1a1a1a; border-color: #2e2e2e; }
+  .mini-icon { font-size: 22px; margin-bottom: 12px; line-height: 1; }
+  .mini-name { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; color: var(--white); margin-bottom: 4px; }
+  .mini-cat { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .mini-line { font-size: 13px; color: var(--sub); line-height: 1.55; }
 </style>
 </head>
 <body>
@@ -705,144 +714,88 @@
 <!-- ── PROJECTS ───────────────────────────────────────────────────────────────── -->
 <section id="projects">
   <div class="section-tag">Portfolio</div>
-  <h2 class="section-title">Current <span>Projects</span></h2>
+  <h2 class="section-title">Systems in the <span>Wild</span></h2>
 
   <div class="projects-grid">
 
-    <a href="#" class="project-card green">
-      <div class="card-icon">💚</div>
-      <div class="card-category">Senior Care · Placement</div>
-      <div class="card-name">CareConnect</div>
-      <p class="card-desc">AI-powered platform connecting families with senior care facilities. Automated intake, smart matching, and a full CRM, built for the agency that wants to scale without adding headcount.</p>
-      <div class="card-tags">
-        <span class="tag">React</span>
-        <span class="tag">Node.js</span>
-        <span class="tag">CRM</span>
-        <span class="tag">PDF Auto-Gen</span>
-        <span class="tag">Lead Routing</span>
-      </div>
-      <div class="card-arrow">↗</div>
-    </a>
-
-    <a href="#" class="project-card purple">
-      <div class="card-icon">🏥</div>
-      <div class="card-category">SaaS · Senior Living</div>
-      <div class="card-name">SeniorHub</div>
-      <p class="card-desc">A private communication and management platform built for senior living facilities and the families they serve. White-labeled per client. Subscription-based. Built to scale across multiple locations.</p>
-      <div class="card-tags">
-        <span class="tag">Next.js</span>
-        <span class="tag">Multi-Tenant</span>
-        <span class="tag">White-Label</span>
-        <span class="tag">SaaS</span>
-        <span class="tag">Stripe</span>
-      </div>
-      <div class="card-arrow">↗</div>
-    </a>
-
-    <a href="#" class="project-card teal" style="grid-column: span 1;">
-      <div class="card-icon">⚡</div>
-      <div class="card-category">Fitness · Wellness</div>
-      <div class="card-name">ZenFlex</div>
-      <p class="card-desc">Original fitness and wellness app built around a philosophy of training the mind and body with equal intensity. A complete platform: workouts, mindset, and progression, built from the ground up as owned IP.</p>
-      <div class="card-tags">
-        <span class="tag">Fitness App</span>
-        <span class="tag">Wellness</span>
-        <span class="tag">Stoicism</span>
-        <span class="tag">Elite Mentality</span>
-        <span class="tag">Original IP</span>
-      </div>
-      <div class="card-arrow">↗</div>
-    </a>
-
-    <div class="project-card" style="--card-accent:#e8b84b; cursor:default;">
-      <div class="card-icon">🔒</div>
-      <div class="card-category">Nightlife · Compliance</div>
-      <div class="card-name">SENTINEL</div>
-      <p class="card-desc">Real-time safety, compliance, and legal defense infrastructure for high-volume venues. AI incident logging, occupancy tracking, anonymous staff reporting, and court-ready documentation, built for operators under scrutiny.</p>
-      <div class="card-tags">
-        <span class="tag">AI REPORTS</span>
-        <span class="tag">LEGAL HOLD</span>
-        <span class="tag">COMPLIANCE</span>
-        <span class="tag">IMMUTABLE LOGS</span>
-      </div>
-    </div>
-
-    <div class="project-card" style="--card-accent:#a78bfa; cursor:default;">
-      <div class="card-icon">🛰️</div>
-      <div class="card-category">Internal Ops · AI Command</div>
-      <div class="card-name">FOB</div>
-      <p class="card-desc">A live operational command layer that connects every active project, agent, and revenue stream into a single real-time display. Built for a founder who needs to see everything, from anywhere.</p>
-      <div class="card-tags">
-        <span class="tag">OPENAI AGENTS</span>
-        <span class="tag">REAL-TIME</span>
-        <span class="tag">MULTI-PROJECT</span>
-        <span class="tag">CANVAS UI</span>
-      </div>
-    </div>
-
-    <a href="#" class="project-card" style="--card-accent:#c8a84b; grid-column: span 1;">
-      <div class="card-icon">⚡</div>
-      <div class="card-category">Multi-Business · Command Center</div>
-      <div class="card-name">CommandCenter</div>
-      <p class="card-desc">Multi-venue owner intelligence platform. Every business, one dashboard. Real-time revenue, staff activity, and AI-generated briefings, so the owner always knows what's happening without being there.</p>
-      <div class="card-tags">
-        <span class="tag">Next.js</span>
-        <span class="tag">Multi-Venue</span>
-        <span class="tag">AI Briefing</span>
-        <span class="tag">Real-Time</span>
-        <span class="tag">White-Label</span>
-      </div>
-      <div class="card-arrow">↗</div>
-    </a>
-
-    <div class="project-card" style="--card-accent:#c8a84b; cursor:default;">
-      <div class="card-icon">🏗️</div>
-      <div class="card-category">Platform Foundation</div>
-      <div class="card-name">ARSENAL</div>
-      <p class="card-desc">Reusable platform foundation powering all DSS Rivera client deployments. Dual-AI architecture, auth, billing, and dashboard infrastructure.</p>
-      <div class="card-tags">
-        <span class="tag">VITE</span>
-        <span class="tag">REACT</span>
-        <span class="tag">SUPABASE</span>
-        <span class="tag">ANTHROPIC</span>
-        <span class="tag">STRIPE</span>
-      </div>
-    </div>
-
-    <div class="project-card blue" style="cursor:default;">
-      <div class="card-icon">⚡</div>
-      <div class="card-category">Solar & Electrical</div>
+    <a href="https://www.unityelectric-solar.com/" target="_blank" rel="noopener noreferrer" class="project-card blue">
+      <div class="card-category">Solar &amp; Electrical</div>
       <div class="card-name">CONDUIT</div>
-      <p class="card-desc">Custom platform for Unity Electric & Solar. Lead capture AI, job tracking, and owner dashboard built on Arsenal.</p>
-      <div class="card-tags">
-        <span class="tag">DUAL-AI</span>
-        <span class="tag">CRM</span>
-        <span class="tag">LEAD ROUTING</span>
-      </div>
-    </div>
+      <p class="card-desc">Lead-capture AI, job pipeline, and an owner dashboard for Unity Electric &amp; Solar.</p>
+      <div class="card-arrow">&#8599;</div>
+    </a>
+    <a href="https://www.livewellsp.org/" target="_blank" rel="noopener noreferrer" class="project-card green">
+      <div class="card-category">Senior Placement</div>
+      <div class="card-name">LIVEWELL</div>
+      <p class="card-desc">A placement and case-management platform for a senior care agency.</p>
+      <div class="card-arrow">&#8599;</div>
+    </a>
+    <a href="https://trinitywellnessco.com" target="_blank" rel="noopener noreferrer" class="project-card teal">
+      <div class="card-category">Wellness &amp; Massage</div>
+      <div class="card-name">TRINITY WELLNESS</div>
+      <p class="card-desc">Booking, an AI lead assistant, and Google Business Profile management.</p>
+      <div class="card-arrow">&#8599;</div>
+    </a>
 
-    <div class="project-card red" style="cursor:default;">
-      <div class="card-icon">🔧</div>
-      <div class="card-category">Auto Repair</div>
-      <div class="card-name">TORQUEOS</div>
-      <p class="card-desc">Where every customer turns into a return. Service history, reminder engine, and AI assistant for independent auto shops.</p>
-      <div class="card-tags">
-        <span class="tag">CUSTOMER CRM</span>
-        <span class="tag">SERVICE TRACKING</span>
-        <span class="tag">AI ASSISTANT</span>
-      </div>
-    </div>
+  </div>
 
-    <div class="project-card green" style="cursor:default;">
-      <div class="card-icon">🌸</div>
-      <div class="card-category">Wellness & Massage Therapy</div>
-      <div class="card-name">BLOOM</div>
-      <p class="card-desc">Practice management platform for solo wellness practitioners. GBP management, client metrics, and booking optimization.</p>
-      <div class="card-tags">
-        <span class="tag">GOOGLE BUSINESS</span>
-        <span class="tag">METRICS</span>
-        <span class="tag">DUAL-AI</span>
-      </div>
+  <div class="ghead"><span class="gh">Other Active Projects</span><span class="gl"></span></div>
+
+  <div class="mini-grid">
+
+    <div class="mini-card">
+      <div class="mini-icon">⚡</div>
+      <div class="mini-name">CommandCenter</div>
+      <div class="mini-cat">Multi-Business · Command Center</div>
+      <p class="mini-line">Multi-business intelligence. One dashboard for owners running several ventures.</p>
+    </div>
+    <div class="mini-card">
+      <div class="mini-icon">🏗️</div>
+      <div class="mini-name">Arsenal</div>
+      <div class="mini-cat">Platform Foundation</div>
+      <p class="mini-line">The platform foundation powering every DSS Rivera client deployment.</p>
+    </div>
+    <div class="mini-card">
+      <div class="mini-icon">🔒</div>
+      <div class="mini-name">Sentinel</div>
+      <div class="mini-cat">Nightlife · Compliance</div>
+      <p class="mini-line">Compliance and incident infrastructure for high-volume venues.</p>
+    </div>
+    <div class="mini-card">
+      <div class="mini-icon">🛰️</div>
+      <div class="mini-name">FOB</div>
+      <div class="mini-cat">Internal Ops · AI Command</div>
+      <p class="mini-line">Internal AI command layer connecting every active project in real time.</p>
+    </div>
+    <div class="mini-card">
+      <div class="mini-icon">🏥</div>
+      <div class="mini-name">SeniorHub</div>
+      <div class="mini-cat">SaaS · Senior Living</div>
+      <p class="mini-line">White-label communication platform for senior living facilities.</p>
+    </div>
+    <div class="mini-card">
+      <div class="mini-icon">💚</div>
+      <div class="mini-name">CareConnect</div>
+      <div class="mini-cat">Senior Care · Placement</div>
+      <p class="mini-line">AI-guided intake and matching for senior care placement.</p>
+    </div>
+    <div class="mini-card">
+      <div class="mini-icon">🔧</div>
+      <div class="mini-name">TorqueOS</div>
+      <div class="mini-cat">Auto Repair</div>
+      <p class="mini-line">Service history and customer retention engine for independent auto shops.</p>
+    </div>
+    <div class="mini-card">
+      <div class="mini-icon">🧘</div>
+      <div class="mini-name">ZenFlex</div>
+      <div class="mini-cat">Fitness · Wellness</div>
+      <p class="mini-line">Original fitness and wellness platform, owned IP.</p>
+    </div>
+    <div class="mini-card">
+      <div class="mini-icon">🌸</div>
+      <div class="mini-name">Bloom</div>
+      <div class="mini-cat">Wellness &amp; Massage</div>
+      <p class="mini-line">Practice management for solo wellness practitioners.</p>
     </div>
 
   </div>
@@ -930,14 +883,15 @@
   <a href="https://www.etsy.com/shop/StrategyBuildsShop" target="_blank" rel="noopener noreferrer" style="font-size:12px; color:var(--gold); text-decoration:none; font-weight:600; letter-spacing:1px;">Shop Digital Products</a>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   document.documentElement.classList.add('js');
 
   // Smooth scroll for same-page anchor links
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
-      var target = document.querySelector(a.getAttribute('href'));
+      var href = a.getAttribute('href');
+      if (href.length < 2) return;
+      var target = document.querySelector(href);
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
