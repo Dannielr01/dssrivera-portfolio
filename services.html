@@ -123,6 +123,13 @@
     text-transform: uppercase; letter-spacing: 2px; color: var(--gold); text-decoration: none;
   }
   .footer-copy { font-size: 12px; color: var(--muted); }
+  .footer-legal { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+  .footer-legal a {
+    color: var(--muted); text-decoration: none; font-weight: 600; letter-spacing: 1px;
+    min-height: 44px; display: inline-flex; align-items: center; padding: 0 6px;
+  }
+  .footer-legal a:hover { color: var(--gold); text-decoration: underline; }
+  .footer-legal .sep { color: var(--line2); }
   .footer-shop { font-size: 12px; color: var(--gold); text-decoration: none; font-weight: 600; letter-spacing: 1px; }
 
   /* scroll reveal */
@@ -192,6 +199,11 @@
 <footer>
   <a class="footer-logo" href="/">DSS Rivera</a>
   <div class="footer-copy">© 2026 · Founder &amp; Digital Solutions Strategist · Built to Scale</div>
+  <div class="footer-legal">
+    <a href="/privacy">Privacy</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/accessibility">Accessibility</a>
+  </div>
   <a class="footer-shop" href="https://www.etsy.com/shop/StrategyBuildsShop" target="_blank" rel="noopener noreferrer">Shop Digital Products</a>
 </footer>
 

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Accessibility Statement · DSS Rivera</title>
+<meta name="description" content="The accessibility statement for dssrivera.com: our WCAG 2.1 AA target, the measures in place today, known limitations, and how to report a barrier."/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --black:  #080808;
+    --dark:   #0f0f0f;
+    --card:   #151515;
+    --border: #242424;
+    --line2:  #333333;
+    --gold:   #c8a84b;
+    --gold2:  #e8c96a;
+    --white:  #f0ede8;
+    --sub:    #888;
+    --muted:  #808080;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  /* noise overlay (matches index.html) */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999; opacity: 0.4;
+  }
+
+  .wrap { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  .nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
+  .wm {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--gold); text-decoration: none;
+    min-height: 44px; display: inline-flex; align-items: center;
+  }
+  .wm .r { color: var(--white); }
+  .navcta {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 2px; font-size: 13px;
+    text-transform: uppercase; color: var(--white); border: 1px solid var(--border);
+    padding: 12px 22px; border-radius: 4px; text-decoration: none;
+    min-height: 44px; display: inline-flex; align-items: center; transition: all .2s;
+  }
+  .navcta:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* intro */
+  .section-tag {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 4px; text-transform: uppercase; color: var(--gold);
+    display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+  }
+  .section-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .intro { padding: 40px 0 8px; }
+  .intro h1 {
+    font-family: 'Barlow Condensed', sans-serif; font-size: clamp(38px, 7vw, 60px);
+    font-weight: 900; line-height: 0.98; letter-spacing: -1px; text-transform: uppercase;
+  }
+  .intro h1 span { color: var(--gold); }
+  .dates { color: var(--muted); font-size: 13px; margin-top: 14px; letter-spacing: 0.5px; }
+
+  /* prose */
+  .prose { padding: 8px 0 24px; }
+  .prose p { color: var(--sub); font-size: 15.5px; line-height: 1.75; margin-top: 14px; }
+  .prose h2 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 21px;
+    letter-spacing: 1px; text-transform: uppercase; color: var(--gold);
+    margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);
+  }
+  .prose ul { margin: 14px 0 0 20px; }
+  .prose li { color: var(--sub); font-size: 15.5px; line-height: 1.75; margin-top: 8px; }
+  .prose a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+  .prose a:hover { color: var(--gold2); }
+  .prose strong { color: var(--white); font-weight: 600; }
+
+  .callout {
+    margin-top: 22px; border: 1px solid var(--line2); border-radius: 5px;
+    padding: 20px 22px;
+    background: linear-gradient(135deg, rgba(200,168,75,.10), rgba(200,168,75,0));
+  }
+  .callout p { margin-top: 0; color: var(--white); }
+
+  .contact-block { color: var(--sub); font-size: 15.5px; line-height: 1.9; margin-top: 14px; }
+  .contact-block a { color: var(--gold); text-decoration: none; }
+  .contact-block a:hover { text-decoration: underline; }
+
+  /* back link */
+  .backrow { margin: 40px 0 0; }
+  .btn {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase; text-decoration: none; padding: 14px 28px; border-radius: 4px;
+    min-height: 50px; display: inline-flex; align-items: center; transition: all .2s;
+    background: transparent; border: 1px solid var(--border); color: var(--white);
+  }
+  .btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* footer (matches index.html) */
+  footer {
+    margin-top: 40px; padding: 28px 24px; border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 900;
+    text-transform: uppercase; letter-spacing: 2px; color: var(--gold); text-decoration: none;
+  }
+  .footer-copy { font-size: 12px; color: var(--muted); }
+  .footer-legal { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+  .footer-legal a {
+    color: var(--muted); text-decoration: none; font-weight: 600; letter-spacing: 1px;
+    min-height: 44px; display: inline-flex; align-items: center; padding: 0 6px;
+  }
+  .footer-legal a:hover { color: var(--gold); text-decoration: underline; }
+  .footer-legal .sep { color: var(--line2); }
+  .footer-shop { font-size: 12px; color: var(--gold); text-decoration: none; font-weight: 600; letter-spacing: 1px; }
+
+  @media (max-width: 700px) {
+    .prose p, .prose li { font-size: 15px; }
+    footer { justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="wm" href="/">DSS <span class="r">RIVERA</span></a>
+    <a class="navcta" href="/#contact">Get In Touch</a>
+  </nav>
+
+  <header class="intro">
+    <div class="section-tag">Legal</div>
+    <h1>Accessibility <span>Statement</span></h1>
+    <p class="dates">Last updated: August 3, 2026</p>
+  </header>
+
+  <main class="prose">
+    <p>DSS Rivera is committed to making dssrivera.com usable by the widest possible audience, including people who use assistive technology.</p>
+
+    <h2>Our target</h2>
+    <p>We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA.</p>
+
+    <h2>What we are doing</h2>
+    <ul>
+      <li>Building the Site with semantic HTML and a declared page language on every page.</li>
+      <li>Maintaining text contrast that meets Level AA on body and secondary text.</li>
+      <li>Sizing navigation links and buttons for touch, at a minimum of 44 pixels.</li>
+      <li>Honoring the browser's reduced motion setting, so animations do not play for visitors who ask for less motion.</li>
+      <li>Leaving the browser's built-in keyboard focus indicator in place rather than removing it.</li>
+      <li>Reviewing accessibility as part of our own pre-launch checklist for every site we build, including this one.</li>
+    </ul>
+
+    <h2>Known limitations</h2>
+    <div class="callout">
+      <p>We would rather tell you what is not finished than claim a standard we have not fully verified.</p>
+    </div>
+    <ul>
+      <li>This Site has not yet had a complete accessibility audit. Automated testing, keyboard-only navigation testing, and screen reader testing are planned and are not yet complete.</li>
+      <li>Custom focus styling has not been added. Keyboard focus currently relies on the browser default indicator, which can be low contrast against a dark background.</li>
+      <li>A full review of text alternatives for images on the Site has not yet been completed.</li>
+    </ul>
+    <p>We update this page as items are resolved, and we change the date at the top when we do.</p>
+
+    <h2>Feedback</h2>
+    <p>If you run into an accessibility barrier on this Site, please tell us. Describe the page and the problem and we will respond within five business days and work to resolve it promptly.</p>
+    <div class="contact-block">
+      <a href="mailto:strategybuilds.dr@gmail.com">strategybuilds.dr@gmail.com</a><br/>
+      <a href="tel:19097615311">(909) 761-5311</a>
+    </div>
+
+    <div class="backrow">
+      <a class="btn" href="/">Back to Home</a>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <a class="footer-logo" href="/">DSS Rivera</a>
+  <div class="footer-copy">© 2026 · Founder &amp; Digital Solutions Strategist · Built to Scale</div>
+  <div class="footer-legal">
+    <a href="/privacy">Privacy</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/accessibility">Accessibility</a>
+  </div>
+  <a class="footer-shop" href="https://www.etsy.com/shop/StrategyBuildsShop" target="_blank" rel="noopener noreferrer">Shop Digital Products</a>
+</footer>
+
+</body>
+</html>

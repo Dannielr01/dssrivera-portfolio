@@ -460,6 +460,13 @@
     color: var(--gold);
   }
   .footer-copy { font-size: 12px; color: var(--muted); }
+  .footer-legal { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+  .footer-legal a {
+    color: var(--muted); text-decoration: none; font-weight: 600; letter-spacing: 1px;
+    min-height: 44px; display: inline-flex; align-items: center; padding: 0 6px;
+  }
+  .footer-legal a:hover { color: var(--gold); text-decoration: underline; }
+  .footer-legal .sep { color: var(--line2); }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -880,6 +887,11 @@
 <footer>
   <div class="footer-logo">DSS Rivera</div>
   <div class="footer-copy">© 2026 · Founder & Digital Solutions Strategist · Built to Scale</div>
+  <div class="footer-legal">
+    <a href="/privacy">Privacy</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/accessibility">Accessibility</a>
+  </div>
   <a href="https://www.etsy.com/shop/StrategyBuildsShop" target="_blank" rel="noopener noreferrer" style="font-size:12px; color:var(--gold); text-decoration:none; font-weight:600; letter-spacing:1px;">Shop Digital Products</a>
 </footer>
 

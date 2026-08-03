@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Privacy Policy · DSS Rivera</title>
+<meta name="description" content="The privacy policy for dssrivera.com. The site has no forms, no accounts, no payments, and no analytics or tracking."/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --black:  #080808;
+    --dark:   #0f0f0f;
+    --card:   #151515;
+    --border: #242424;
+    --line2:  #333333;
+    --gold:   #c8a84b;
+    --gold2:  #e8c96a;
+    --white:  #f0ede8;
+    --sub:    #888;
+    --muted:  #808080;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  /* noise overlay (matches index.html) */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999; opacity: 0.4;
+  }
+
+  .wrap { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  .nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
+  .wm {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--gold); text-decoration: none;
+    min-height: 44px; display: inline-flex; align-items: center;
+  }
+  .wm .r { color: var(--white); }
+  .navcta {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 2px; font-size: 13px;
+    text-transform: uppercase; color: var(--white); border: 1px solid var(--border);
+    padding: 12px 22px; border-radius: 4px; text-decoration: none;
+    min-height: 44px; display: inline-flex; align-items: center; transition: all .2s;
+  }
+  .navcta:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* intro */
+  .section-tag {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 4px; text-transform: uppercase; color: var(--gold);
+    display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+  }
+  .section-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .intro { padding: 40px 0 8px; }
+  .intro h1 {
+    font-family: 'Barlow Condensed', sans-serif; font-size: clamp(38px, 7vw, 60px);
+    font-weight: 900; line-height: 0.98; letter-spacing: -1px; text-transform: uppercase;
+  }
+  .intro h1 span { color: var(--gold); }
+  .dates { color: var(--muted); font-size: 13px; margin-top: 14px; letter-spacing: 0.5px; }
+
+  /* prose */
+  .prose { padding: 8px 0 24px; }
+  .prose p { color: var(--sub); font-size: 15.5px; line-height: 1.75; margin-top: 14px; }
+  .prose h2 {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 21px;
+    letter-spacing: 1px; text-transform: uppercase; color: var(--gold);
+    margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);
+  }
+  .prose ul { margin: 14px 0 0 20px; }
+  .prose li { color: var(--sub); font-size: 15.5px; line-height: 1.75; margin-top: 8px; }
+  .prose a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+  .prose a:hover { color: var(--gold2); }
+  .prose strong { color: var(--white); font-weight: 600; }
+
+  .callout {
+    margin-top: 22px; border: 1px solid var(--line2); border-radius: 5px;
+    padding: 20px 22px;
+    background: linear-gradient(135deg, rgba(200,168,75,.10), rgba(200,168,75,0));
+  }
+  .callout p { margin-top: 0; color: var(--white); }
+
+  .contact-block { color: var(--sub); font-size: 15.5px; line-height: 1.9; margin-top: 14px; }
+  .contact-block a { color: var(--gold); text-decoration: none; }
+  .contact-block a:hover { text-decoration: underline; }
+
+  /* back link */
+  .backrow { margin: 40px 0 0; }
+  .btn {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase; text-decoration: none; padding: 14px 28px; border-radius: 4px;
+    min-height: 50px; display: inline-flex; align-items: center; transition: all .2s;
+    background: transparent; border: 1px solid var(--border); color: var(--white);
+  }
+  .btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* footer (matches index.html) */
+  footer {
+    margin-top: 40px; padding: 28px 24px; border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 900;
+    text-transform: uppercase; letter-spacing: 2px; color: var(--gold); text-decoration: none;
+  }
+  .footer-copy { font-size: 12px; color: var(--muted); }
+  .footer-legal { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+  .footer-legal a {
+    color: var(--muted); text-decoration: none; font-weight: 600; letter-spacing: 1px;
+    min-height: 44px; display: inline-flex; align-items: center; padding: 0 6px;
+  }
+  .footer-legal a:hover { color: var(--gold); text-decoration: underline; }
+  .footer-legal .sep { color: var(--line2); }
+  .footer-shop { font-size: 12px; color: var(--gold); text-decoration: none; font-weight: 600; letter-spacing: 1px; }
+
+  @media (max-width: 700px) {
+    .prose p, .prose li { font-size: 15px; }
+    footer { justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="wm" href="/">DSS <span class="r">RIVERA</span></a>
+    <a class="navcta" href="/#contact">Get In Touch</a>
+  </nav>
+
+  <header class="intro">
+    <div class="section-tag">Legal</div>
+    <h1>Privacy <span>Policy</span></h1>
+    <p class="dates">Effective date: August 3, 2026 · Last updated: August 3, 2026</p>
+  </header>
+
+  <main class="prose">
+    <p>This Privacy Policy describes how DSS Rivera ("we," "us," "our") collects, uses, and shares information when you visit dssrivera.com (the "Site").</p>
+
+    <div class="callout">
+      <p>The short version: this Site is a brochure. It has no contact forms, no accounts, no payments, no chat, and no analytics or advertising trackers. The only way it receives information about you is if you choose to call or email us using the links on the Site.</p>
+    </div>
+
+    <h2>1. Information we collect</h2>
+    <p>Through the Site itself, we collect nothing. There are no contact forms, no account logins, no payment fields, no chat features, and no analytics or advertising trackers on any page.</p>
+    <p>If you contact us using the phone or email links on the Site, we receive whatever you choose to share in that call or message, such as your name, phone number, email address, and a description of what you need.</p>
+    <p>Our hosting provider automatically records standard technical request data, such as IP address, browser type, and the pages requested, as part of serving the Site and protecting it from abuse. We do not use that data to build a profile of you, and we do not operate a visitor analytics dashboard for this Site.</p>
+
+    <h2>2. How we use information</h2>
+    <p>We use what you send us to respond to your inquiry and, if we go on to work together, to provide the services you ask for. We do not sell your personal information, and we do not use it for advertising.</p>
+
+    <h2>3. Who we share information with</h2>
+    <ul>
+      <li><strong>Vercel</strong>, which hosts the Site and processes the standard technical request data described above.</li>
+      <li><strong>Google</strong>, which provides the email account that receives messages sent to our published address.</li>
+    </ul>
+    <p>We do not share your information with anyone else, except where required by law or where necessary to protect our rights, safety, or property.</p>
+
+    <h2>4. How to review or change your information</h2>
+    <p>Email <a href="mailto:strategybuilds.dr@gmail.com">strategybuilds.dr@gmail.com</a> to ask what we hold about you, to have it corrected, or to have it deleted. We will respond within a reasonable time and honor applicable legal rights.</p>
+
+    <h2>5. How we notify you of changes</h2>
+    <p>When we make material changes to this policy, we will update the effective date at the top of this page and post the revised version here.</p>
+
+    <h2>6. Do Not Track</h2>
+    <p>Some browsers send "Do Not Track" signals. The Site does not currently respond to Do Not Track signals. Because the Site runs no tracking, there is nothing for that signal to switch off.</p>
+
+    <h2>7. Retention and security</h2>
+    <p>We keep what you send us only as long as needed to respond and to maintain ordinary business records, or as long as required by law. The Site is served over an encrypted connection. No method of transmission or storage is completely secure.</p>
+
+    <h2>8. Children</h2>
+    <p>The Site is not directed to children under 13, and we do not knowingly collect personal information from them. If you believe a child has provided us personal information, contact us at the address below and we will delete it.</p>
+
+    <h2>9. Contact</h2>
+    <div class="contact-block">
+      DSS Rivera<br/>
+      <a href="mailto:strategybuilds.dr@gmail.com">strategybuilds.dr@gmail.com</a><br/>
+      <a href="tel:19097615311">(909) 761-5311</a><br/>
+      California, United States
+    </div>
+
+    <div class="backrow">
+      <a class="btn" href="/">Back to Home</a>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <a class="footer-logo" href="/">DSS Rivera</a>
+  <div class="footer-copy">© 2026 · Founder &amp; Digital Solutions Strategist · Built to Scale</div>
+  <div class="footer-legal">
+    <a href="/privacy">Privacy</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/accessibility">Accessibility</a>
+  </div>
+  <a class="footer-shop" href="https://www.etsy.com/shop/StrategyBuildsShop" target="_blank" rel="noopener noreferrer">Shop Digital Products</a>
+</footer>
+
+</body>
+</html>
